@@ -5,7 +5,7 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPosts } from "../lib/posts";
 
 export async function getStaticProps() {
-  const allPosts = getSortedPosts();
+  let allPosts = await getSortedPosts();
   return {
     props: {
       allPosts,
@@ -13,8 +13,8 @@ export async function getStaticProps() {
   };
 }
 
+
 export default function Home({ allPosts }) {
-  console.log(allPosts);
   return (
     <Layout home>
       <Head>
@@ -29,16 +29,16 @@ export default function Home({ allPosts }) {
         <p>
           Find the first post <Link href="/posts/first-post">here</Link>.
         </p>
-        <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-          <h2 className={utilStyles.headingLg}>Other Posts</h2>
-          <ul className={utilStyles.list}>
-            {allPosts.map(({id, date, title}) => (
-              <li className={utilStyles.listItem} key={id}>
-                {date} {title}
-              </li>
-            ))}
-          </ul>
-        </section>
+      </section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Other Posts</h2>
+        <ul className={utilStyles.list}>
+          {allPosts.map(({ id, date, title }) => (
+            <li className={utilStyles.listItem} key={id}>
+              {date} {title}
+            </li>
+          ))}
+        </ul>
       </section>
     </Layout>
   );
