@@ -13,7 +13,6 @@ export async function getStaticProps() {
   };
 }
 
-
 export default function Home({ allPosts }) {
   return (
     <Layout home>
@@ -35,7 +34,7 @@ export default function Home({ allPosts }) {
         <ul className={utilStyles.list}>
           {allPosts.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              {date} {title}
+              <Link href={`/posts/${id}`}>{`${date} ${title}`}</Link> 
             </li>
           ))}
         </ul>
