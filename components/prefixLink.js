@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-export default function PrefixLink({ href, as = href, children }) {
+export default function PrefixLink({ href, as = href, children = undefined, rel = undefined }) {
   return (
-    <Link href={href} as={`${process.env.linkPrefix}${as}`}>
-      {children}
+    <Link rel={(rel) ? {rel} : ''} href={href} as={`${process.env.linkPrefix}${as}`}>
+      {children ? children: ''}
     </Link>
   );
 }

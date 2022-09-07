@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Link from "next/link";
+import PrefixLink from "../components/prefixLink";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPosts } from "../lib/posts";
@@ -24,10 +24,10 @@ export default function Home({ allPosts }) {
         <p>Shivam is a fullstack developer, learning Next.js</p>
         <p>
           (This is a sample website built using the official{" "}
-          <Link href="https://nextjs.org/learn">next.js tutorial</Link>.)
+          <PrefixLink href="https://nextjs.org/learn">next.js tutorial</PrefixLink>.)
         </p>
         <p>
-          Find the first post <Link href="/posts/first-post">here</Link>.
+          Find the first post <PrefixLink href="/posts/first-post">here</PrefixLink>.
         </p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -35,7 +35,7 @@ export default function Home({ allPosts }) {
         <ul className={utilStyles.list}>
           {allPosts.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}><a>{title}</a></Link>
+              <PrefixLink href={`/posts/${id}`}><a>{title}</a></PrefixLink>
               <br/>
               <small className={utilStyles.lightText}><Date dateStr={date}/></small>
             </li>
