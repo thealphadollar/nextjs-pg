@@ -1,5 +1,6 @@
 import Head from "next/head";
 import PrefixLink from "../components/prefixLink";
+import Link from "next/link";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPosts } from "../lib/posts";
@@ -24,7 +25,7 @@ export default function Home({ allPosts }) {
         <p>Shivam is a fullstack developer, learning Next.js</p>
         <p>
           (This is a sample website built using the official{" "}
-          <PrefixLink href="https://nextjs.org/learn">next.js tutorial</PrefixLink>.)
+          <Link href="https://nextjs.org/learn">next.js tutorial</Link>.)
         </p>
         <p>
           Find the first post <PrefixLink href="/posts/first-post">here</PrefixLink>.
