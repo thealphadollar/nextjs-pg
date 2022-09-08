@@ -12,7 +12,7 @@ export default function Layout(props) {
   return (
     <div className={layoutStyles.container}>
       <Head>
-        <Link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={`${process.env.pathPrefix}/favicon.ico`} />
         <meta
           name="description"
           content="Learning how to build a basic Next.js website"

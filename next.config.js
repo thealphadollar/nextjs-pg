@@ -7,6 +7,9 @@ const repoNameURIPrefix =
 module.exports = {
   assetPrefix: repoNameURIPrefix,
   basePath: repoNameURIPrefix,
+  env: {
+    pathPrefix: repoNameURIPrefix
+  },
   experimental: {
     images: {
       unoptimized: true,
