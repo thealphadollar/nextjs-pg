@@ -1,5 +1,5 @@
 import Head from "next/head";
-import PrefixLink from "../../components/prefixLink";
+import Link from "next/link";
 import Layout from "../../components/layout";
 
 export default function FirstPost() {
@@ -10,7 +10,7 @@ export default function FirstPost() {
       </Head>
       <h1 className="title">First Post</h1>
       <h2>
-        <PrefixLink href="/">Home</PrefixLink>
+        <Link href="/">Home</Link>
       </h2>
     </Layout>
   );

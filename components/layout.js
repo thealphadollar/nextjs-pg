@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import layoutStyles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
-import PrefixLink from "./prefixLink";
+import Link from "next/link";
 import profilePic from "../public/imgs/profile.jpg";
 
 const name = "Shivam Kumar Jha";
@@ -12,7 +12,7 @@ export default function Layout(props) {
   return (
     <div className={layoutStyles.container}>
       <Head>
-        <PrefixLink rel="icon" href="/favicon.ico" />
+        <Link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
           content="Learning how to build a basic Next.js website"
@@ -41,7 +41,7 @@ export default function Layout(props) {
           </>
         ) : (
           <>
-            <PrefixLink href="/">
+            <Link href="/">
               <a>
                 <Image
                   priority
@@ -52,11 +52,11 @@ export default function Layout(props) {
                   alt={name}
                 />
               </a>
-            </PrefixLink>
+            </Link>
             <h2 className={utilStyles.headingLg}>
-              <PrefixLink href="/">
+              <Link href="/">
                 <a className={utilStyles.colorInherit}>{name}</a>
-              </PrefixLink>
+              </Link>
             </h2>
           </>
         )}
@@ -64,7 +64,7 @@ export default function Layout(props) {
       <main>{props.children}</main>
       {!props.home && (
         <div className={layoutStyles.backToHome}>
-          <PrefixLink href="/">← Back to home</PrefixLink>
+          <Link href="/">← Back to home</Link>
         </div>
       )}
     </div>
