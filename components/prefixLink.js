@@ -6,7 +6,7 @@ export default function PrefixLink({
   rel = undefined,
 }) {
   return (
-    <Link rel={rel ? { rel } : ""} href={`/${process.env.linkPrefix}${href}`}>
+    <Link rel={rel ? { rel } : ""} href={`${process.env.linkPrefix}${href}`}>
       {children ? children : ""}
     </Link>
   );

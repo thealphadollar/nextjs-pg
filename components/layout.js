@@ -3,6 +3,7 @@ import Image from "next/image";
 import layoutStyles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import PrefixLink from "./prefixLink";
+import profilePic from "../public/imgs/profile.jpg";
 
 const name = "Shivam Kumar Jha";
 export const siteTitle = "Shivam's Next.js PlayGround";
@@ -30,7 +31,7 @@ export default function Layout(props) {
           <>
             <Image
               priority
-              src="/imgs/profile.jpg"
+              src={profilePic}
               className={utilStyles.borderCircle}
               height={108}
               width={108}
@@ -44,7 +45,7 @@ export default function Layout(props) {
               <a>
                 <Image
                   priority
-                  src="/imgs/profile.jpg"
+                  src={profilePic}
                   className={utilStyles.borderCircle}
                   height={108}
                   width={108}
